@@ -8,9 +8,10 @@ prompt_sets_minion_id_in_ps1:
   file.managed:
     - name: /etc/profile.d/prompt.sh
     - source: salt://adb/cli/files/etc/profile.d/prompt.sh
+    - template: jinja
 
 default_bashrc_uses_nickname:
   file.managed:
     - name: /etc/bashrc
-    - source: salt://adb/cli/files/etc/bashrc
+    - source: salt://adb/cli/files/etc/bash.bashrc
 
