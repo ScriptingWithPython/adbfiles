@@ -23,8 +23,7 @@ add_dirs_2:
 add_top_file:
   file.managed:
     - name: /srv/salt/top.sls
-    - contents: |
-        base: {}
+    - source: salt://adb/master2016/files/top.sls
 
 
 # Add gitfs remotes
