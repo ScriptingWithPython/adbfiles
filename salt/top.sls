@@ -1,5 +1,5 @@
 base:
-  'mom*':
+  'mom1':
     - adb.cli
     - adb.master2016
   'syndic*':
