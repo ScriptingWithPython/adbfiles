@@ -44,4 +44,4 @@ restart_salt_master:
       - add_gitfs_remotes
       - add_fileserver_backend
     - require:
-      - install-gitpythonn
+      - install-gitpython
