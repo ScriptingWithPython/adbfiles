@@ -15,3 +15,8 @@ default_bashrc_uses_nickname:
     - name: /etc/bashrc
     - source: salt://adb/cli/files/etc/bash.bashrc
 
+set_root_bashrc:
+  file.managed:
+    - name: /root/.bashrc
+    - source: salt://adb/cli/files/root/_bashrc
+    - template: jinja
