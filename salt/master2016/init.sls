@@ -35,7 +35,7 @@ add_gitfs_remotes:
       - add_dirs
 
 # Add fileserver_backend
-# gitfs is replaced with git in 2018
+# git is replaced with gitfs in 2018
 add_fileserver_backend:
   file.managed:
     - name: /etc/salt/master.d/fileserver_backend.conf
@@ -44,7 +44,7 @@ add_fileserver_backend:
     - contents: |
         fileserver_backend:
           - roots
-          - gitfs
+          - git
         top_file_merging_strategy: same
 
 # Restart salt-master

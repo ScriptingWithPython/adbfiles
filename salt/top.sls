@@ -5,3 +5,5 @@ base:
   'syndic*':
     - adb.cli
     - adb.master2016
+  'redis*':
+    - adb.redis
