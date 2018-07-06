@@ -16,6 +16,17 @@ add_dirs:
     - name: /etc/salt/master.d
     - makedirs: True
 
+add_dirs_2:
+  file.directory:
+    - name: /srv/salt/
+
+add_top_file:
+  file.managed:
+    - name: /srv/salt/top.sls
+    - contents: |
+        base: {}
+
+
 # Add gitfs remotes
 add_gitfs_remotes:
   file.managed:
