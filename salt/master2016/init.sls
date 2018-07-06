@@ -26,12 +26,13 @@ add_fileserver_backend:
         fileserver_backend:
           - roots
           - gitfs
+        top_file_merging_strategy: same
 
-# Restart salt-master
-restart_salt_master:
-  service.running:
-    - watch:
-      - add_gitfs_remotes
-      - add_fileserver_backend
-    - require:
-      - install-gitpythonn
+# # Restart salt-master
+# restart_salt_master:
+#   service.running:
+#     - watch:
+#       - add_gitfs_remotes
+#       - add_fileserver_backend
+#     - require:
+#       - install-gitpythonn
