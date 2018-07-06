@@ -40,6 +40,7 @@ add_fileserver_backend:
 # Restart salt-master
 restart_salt_master:
   service.running:
+    - name: salt-master
     - watch:
       - add_gitfs_remotes
       - add_fileserver_backend
