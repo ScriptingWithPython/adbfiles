@@ -2,7 +2,7 @@
 # TODO Make this work on all the system that I use
 install-python-pip:
   pkg.installed:
-    - name: python-pip2 
+    - name: python-pip
 
 # Install GitPython
 install-gitpython:
@@ -11,17 +11,26 @@ install-gitpython:
     - require:
       - install-python-pip
 
+add_dirs:
+  file.directory:
+    - name: /etc/salt/master.d
+    - makedirs: True
+
 # Add gitfs remotes
 add_gitfs_remotes:
   file.managed:
     - name: /etc/salt/master.d/gitfs_remotes.conf
-    - source: salt://adb/master2015/files/etc-salt-master.d/gitfs_remotes.conf
+    - source: salt://adb/master2016/files/etc-salt-master.d/gitfs_remotes.conf
+    - require:
+      - add_dirs
 
 # Add fileserver_backend
 # gitfs is replaced with git in 2018
 add_fileserver_backend:
   file.managed:
     - name: /etc/salt/master.d/fileserver_backend.conf
+    - require:
+      - add_dirs
     - content: |
         fileserver_backend:
           - roots
