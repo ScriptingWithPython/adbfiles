@@ -1,7 +1,7 @@
 # Install python-pip
 # TODO Make this work on all the system that I use
 install-python-pip:
-  package.installed:
+  pkg.installed:
     - name: python-pip2 
 
 # Install GitPython
